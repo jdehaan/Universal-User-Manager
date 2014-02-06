@@ -31,7 +31,7 @@ namespace UUM.Controls.ViewModels
 			RegisterProperty("UserPool", typeof(UserPoolModel), new ObservableCollection<UserPoolModel>());
 		
 		[Model]
-		[Expose("Users")]
+        [Catel.Fody.Expose("Users")]
 		public UserPoolModel UserPool
 		{
 			get { return GetValue<UserPoolModel>(UserPoolProperty); }

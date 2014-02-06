@@ -26,8 +26,8 @@ namespace UUM.Controls.ViewModels
         [Model]
         [Catel.Fody.Expose("Name")]
         [Catel.Fody.Expose("Description")]
-        [Expose("UserPool")]
-        [Expose("Parameters", Mode = ViewModelToModelMode.OneWay)]
+        [Catel.Fody.Expose("UserPool")]
+        [Catel.Fody.Expose("Parameters", IsReadOnly=true)]
         public ProjectModel Project
         { get; private set; }
 
