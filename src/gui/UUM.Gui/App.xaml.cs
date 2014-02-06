@@ -17,7 +17,7 @@ namespace UUM.Gui
         protected override void OnStartup(StartupEventArgs e)
         {
         	#if DEBUG
-        	LogManager.RegisterDebugListener();
+        	LogManager.AddDebugListener();
         	#endif
             log4net.Config.XmlConfigurator.Configure();
             
