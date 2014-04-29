@@ -3,7 +3,7 @@
 using Catel.Data;
 using Catel.IoC;
 using Catel.MVVM;
-using Catel.MVVM.Services;
+using Catel.Services;
 
 using UUM.Api.Models;
 

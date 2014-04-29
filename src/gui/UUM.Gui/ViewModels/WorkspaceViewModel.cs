@@ -1,12 +1,13 @@
 ﻿using System.Collections.ObjectModel;
+using System.IO;
 using System.Windows;
 
 using Catel.Data;
 using Catel.IoC;
 using Catel.Logging;
 using Catel.MVVM;
-using Catel.MVVM.Services;
 using Catel.MVVM.Tasks;
+using Catel.Services;
 
 using UUM.Api.Interfaces;
 using UUM.Engine.Models;
@@ -123,7 +124,10 @@ namespace UUM.Gui.ViewModels
             if (openFileService.DetermineFile())
             {
                 string fileName = openFileService.FileName;
-                Project = ProjectModel.Load(fileName, SerializationMode.Xml);
+				using (var stream = File.OpenRead(fileName))
+				{
+                	Project = ProjectModel.Load(stream, SerializationMode.Xml);
+				}
                 
                 _log.Info("LoadProject command executed: '{0}'", fileName);
             }
