@@ -1,5 +1,4 @@
 ﻿using Catel.Windows;
-using UUM.Gui.Helpers;
 
 namespace UUM.Gui.Views
 {

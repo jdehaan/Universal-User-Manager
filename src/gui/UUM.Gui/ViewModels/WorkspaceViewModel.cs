@@ -163,8 +163,10 @@ namespace UUM.Gui.ViewModels
         private void OnApplicationExitExecuted()
         {
             var messageService = DependencyResolver.Resolve<IMessageService>();
-            if (messageService.Show("Are you sure you want to exit application?",
-                                    "Are you sure?", MessageButton.YesNo) == MessageResult.Yes)
+            var task = messageService.Show("Are you sure you want to exit application?",
+                                    "Are you sure?", MessageButton.YesNo);
+            task.RunSynchronously();
+            if (task.Result == MessageResult.Yes)
             {
                 Application.Current.Shutdown();
                 // Do it!

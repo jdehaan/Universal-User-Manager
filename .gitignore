@@ -5,6 +5,7 @@ obj
 /src/packages/Catel.*
 /src/packages/Fody.*
 /src/packages/log4net.*
+/src/packages/Microsoft.Bcl*
 /src/packages/NUnit*
 /src/packages/NSubstitute*
 /src/*.suo
